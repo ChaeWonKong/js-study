@@ -49,25 +49,73 @@
 <body>
     <div class="main">
    <input id="input" value="0"><br>
-   <button id="ac" style="width: 158px; background-color: #909090; color: black">AC</button>
-   <button id="div" class="calc" style="width: 50px; margin-left: 1px">/</button><br>
-   <button id="n7"  value="7" style="width: 50px">7</button>
-   <button id="n8" style="width: 50px">8</button>
-   <button id="n9" style="width: 50px">9</button>
-   <button id="mul" class="calc" style="width: 50px">*</button><br>
-   <button id="n4" style="width: 50px">4</button>
-   <button id="n5" style="width: 50px">5</button>
-   <button id="n6" style="width: 50px">6</button>
-   <button id="sub" class="calc" style="width: 50px">-</button><br>
-   <button id="n1" style="width: 50px">1</button>
-   <button id="n2" style="width: 50px">2</button>
-   <button id="n3" style="width: 50px">3</button>
-   <button id="sum" class="calc" style="width: 50px">+</button><br>
-   <button id="n0" style="width: 158px">0</button>
-   <button id="eq" class="calc" style="width: 50px; margin-left: 1px">=</button>
+   <button id="ac" onclick="setDefault()" style="width: 158px; background-color: #909090; color: black">AC</button>
+   <button id="div" onclick="getOperator('/')" class="calc" style="width: 50px; margin-left: 1px">/</button><br>
+   <button id="n7" onclick="setValue(7)" value="7" style="width: 50px">7</button>
+   <button id="n8" onclick="setValue(8)" style="width: 50px">8</button>
+   <button id="n9" onclick="setValue(9)" style="width: 50px">9</button>
+   <button id="mul" onclick="getOperator('*')" class="calc" style="width: 50px">*</button><br>
+   <button id="n4" onclick="setValue(4)" style="width: 50px">4</button>
+   <button id="n5" onclick="setValue(5)" style="width: 50px">5</button>
+   <button id="n6" onclick="setValue(6)" style="width: 50px">6</button>
+   <button id="sub" onclick="getOperator('-')" class="calc" style="width: 50px">-</button><br>
+   <button id="n1" onclick="setValue(1)" style="width: 50px">1</button>
+   <button id="n2" onclick="setValue(2)" style="width: 50px">2</button>
+   <button id="n3" onclick="setValue(3)" style="width: 50px">3</button>
+   <button id="sum" onclick="getOperator('+')" class="calc" style="width: 50px">+</button><br>
+   <button id="n0" onclick="setValue(0)" style="width: 158px">0</button>
+   <button id="eq" onclick="equalOperator()" class="calc" style="width: 50px; margin-left: 1px">=</button>
    
    </div>
-   <script>console.log("hi");</script>
+   <script>
+        var arr = [];
+        var setValue = function(val) {
+            var input = document.getElementById('input')
+            if (input.value === "0") {
+                input.value = val;
+            } else {
+                input.value += val;
+            };
+        };
+        
+        var setDefault = function() {
+            arr = [];
+            document.getElementById('input').value = "0";
+        };
+        
+        var getOperator = function(operator) {
+            var input = document.getElementById('input');
+            arr.push(input.value);
+            input.value = 0; //일단 연산자 누르면 폼 내의 숫자 0으로 바꾸기로..
+            arr.push(operator);
+        };
+       
+        var equalOperator = function() {
+            var input = document.getElementById('input');
+            arr.push(input.value);
+            var result = Number(arr[0]);
+                    for (var i = 1; i < arr.length; i++) {
+                        switch (arr[i]) {
+                            case '+':
+                                result += Number(arr[i+1]);
+                                break;
+                            case '-':
+                                result -= Number(arr[i+1]);
+                                break;
+                            case '*':
+                                result *= Number(arr[i+1]);
+                                break;
+                            case '/':
+                                result /= Number(arr[i+1]);
+                                break;
+                            default:
+                                break;
+                        };
+                    };
+                    document.getElementById('input').value = result;
+        };
+        
+    </script>
     
 </body>
 </html>
