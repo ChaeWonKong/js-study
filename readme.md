@@ -20,4 +20,5 @@ This repository is for Javascript study.
 1. [str_calc.js](https://github.com/ChaeWonKong/js-study/blob/master/calculator/str_calc.js): JS file for str_calc.html
 1. [Calculator2.html](https://github.com/ChaeWonKong/js-study/blob/master/calculator/calculator2.html): Print sum, subtraction, multiple, division of two number inputs.
 1. [calculator2.js](https://github.com/ChaeWonKong/js-study/blob/master/calculator/calculator2.js): Js file for calculator2.html
+1. [calculator3.html](https://github.com/ChaeWonKong/js-study/blob/master/calculator/calculator3.html): Print calculated result based on user input.
 
