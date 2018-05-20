@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator3</title>
+</head>
+<body>
+   <h1>사용자 입력을 이용한 계산기</h1>
+   <h2>입력</h2>
+   <p id="input"></p>
+    <script>
+        var num1 = Number(prompt("첫 숫자를 입력하세요"));
+        var num2 = Number(prompt("두번째 숫자를 입력하세요"));
+        var calc = prompt("계산내용을 입력하세요");
+        var str = ""
+        
+        var input = document.getElementById('input');
+        var input_str = "num1: " + num1 + "<br>" + "num2: " + num2;
+        
+        switch (calc) {
+            case "+":
+                str += num1 + " 더하기 " + num2 + "는 " + (num1+num2) + " 입니다";
+                document.write(str);
+                input.innerHTML = input_str + "<br>" + "연산자: " + "더하기";
+                break;
+            case "-":
+                str += num1 + " 빼기 " + num2 + "는 " + (num1-num2) + " 입니다";
+                input.innerHTML = input_str + "<br>" + "연산자: " + "빼기";
+                document.write(str);
+                break;
+            case "*":
+                str += num1 + " 곱하기 " + num2 + "는 " + (num1*num2) + " 입니다";
+                input.innerHTML = input_str + "<br>" + "연산자: " + "곱하기";
+                document.write(str);
+                break;
+            default:
+                str += num1 + " 나누기 " + num2 + "는 " + (num1/num2) + " 입니다";
+                input.innerHTML = input_str + "<br>" + "연산자: " + "나누기";
+                document.write(str);
+        }
+        
+    </script>
+    
+</body>
+</html>
