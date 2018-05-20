@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator4</title>
+</head>
+<body>
+    <script>
+        var calculator = {
+            "arr": [],
+            "calculate": function() {
+                var arr = this.arr;
+                var result = Number(arr[0]);
+                var str = arr[0];
+                for (var i = 1; i < arr.length; i++) {
+                    switch (arr[i]) {
+                        case '+':
+                            result += Number(arr[i+1]);
+                            str += " + " + arr[i+1];
+                            break;
+                        case '-':
+                            result -= Number(arr[i+1]);
+                            str += " - " + arr[i+1];
+                            break;
+                        case '*':
+                            result *= Number(arr[i+1]);
+                            str += " * " + arr[i+1];
+                            break;
+                        case '/':
+                            result /= Number(arr[i+1]);
+                            str += " / " + arr[i+1];
+                            break;
+                    }
+                };
+                document.write(str + " = " + result);
+            },
+
+            "getInput": function() {
+                while (true) {
+                    var input = prompt("숫자/연산자 입력");
+                    if (input === "q") {
+                        break;
+                    } else {
+                        this.arr.push(input);
+                    }
+                };
+            }
+        };
+        
+        function main() {
+            calculator.getInput();
+            calculator.calculate();
+        };
+        
+        main();
+    </script>
+</body>
+</html>
