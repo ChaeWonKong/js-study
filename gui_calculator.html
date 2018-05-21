@@ -29,8 +29,19 @@
             opacity: 0.8;
         }
 
-        button.calc {
+        button.opr {
+            width: 50px;
             background-color: #E5822B;
+        }
+        
+        button.num {
+            width: 50px;
+        }
+        
+        button.ac {
+            background-color: #909090;
+            color: black;
+            width: 158px;
         }
         
         input {
@@ -53,24 +64,24 @@
     
 </head>
 <body>
-    <div class="main">
-   <input id="input" value="0"><br>
-   <button id="ac" onclick="setDefault()" style="width: 158px; background-color: #909090; color: black">AC</button>
-   <button id="div" onclick="getOperator('/')" class="calc" style="width: 50px; margin-left: 1px">/</button><br>
-   <button id="n7" onclick="setValue(7)" value="7" style="width: 50px">7</button>
-   <button id="n8" onclick="setValue(8)" style="width: 50px">8</button>
-   <button id="n9" onclick="setValue(9)" style="width: 50px">9</button>
-   <button id="mul" onclick="getOperator('*')" class="calc" style="width: 50px">*</button><br>
-   <button id="n4" onclick="setValue(4)" style="width: 50px">4</button>
-   <button id="n5" onclick="setValue(5)" style="width: 50px">5</button>
-   <button id="n6" onclick="setValue(6)" style="width: 50px">6</button>
-   <button id="sub" onclick="getOperator('-')" class="calc" style="width: 50px">-</button><br>
-   <button id="n1" onclick="setValue(1)" style="width: 50px">1</button>
-   <button id="n2" onclick="setValue(2)" style="width: 50px">2</button>
-   <button id="n3" onclick="setValue(3)" style="width: 50px">3</button>
-   <button id="sum" onclick="getOperator('+')" class="calc" style="width: 50px">+</button><br>
-   <button id="n0" onclick="setValue(0)" style="width: 158px">0</button>
-   <button id="eq" onclick="equalOperator()" class="calc" style="width: 50px; margin-left: 1px">=</button>
+   <div class="main">
+       <input id="input" value="0"><br>
+       <button class="ac" onclick="setDefault()" >AC</button>
+       <button class="opr" onclick="getOperator('/')" style="margin-left: 1px">/</button><br>
+       <button class="num" onclick="setValue(7)" value="7" >7</button>
+       <button class="num" onclick="setValue(8)">8</button>
+       <button class="num" onclick="setValue(9)">9</button>
+       <button class="opr" onclick="getOperator('*')">*</button><br>
+       <button class="num" onclick="setValue(4)">4</button>
+       <button class="num" onclick="setValue(5)">5</button>
+       <button class="num" onclick="setValue(6)">6</button>
+       <button class="opr" onclick="getOperator('-')">-</button><br>
+       <button class="num" onclick="setValue(1)">1</button>
+       <button class="num" onclick="setValue(2)">2</button>
+       <button class="num" onclick="setValue(3)">3</button>
+       <button class="opr" onclick="getOperator('+')">+</button><br>
+       <button class="num" onclick="setValue(0)" style="width: 158px">0</button>
+       <button class="opr" onclick="equalOperator()" style="margin-left: 1px">=</button>
    
    </div>
    <script>
