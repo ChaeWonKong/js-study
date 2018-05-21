@@ -81,17 +81,23 @@
        <button class="num" onclick="setValue(3)">3</button>
        <button class="opr" onclick="getOperator('+')">+</button><br>
        <button class="num" onclick="setValue(0)" style="width: 158px">0</button>
-       <button class="opr" onclick="equalOperator()" style="margin-left: 1px">=</button>
+       <button class="opr" onclick="getOperator('=')" style="margin-left: 1px">=</button>
    
    </div>
    <script>
         var arr = [];
+        var valid = true;
         var setValue = function(val) {
             var input = document.getElementById('input')
             if (input.value === "0") {
                 input.value = val;
             } else {
-                input.value += val;
+                if (valid === false) {
+                    input.value = val;
+                    valid = true;
+                } else {
+                    input.value += val;
+                };
             };
         };
         
@@ -103,15 +109,8 @@
         var getOperator = function(operator) {
             var input = document.getElementById('input');
             arr.push(input.value);
-            input.value = 0; //일단 연산자 누르면 폼 내의 숫자 0으로 바꾸기로..
-            arr.push(operator);
-        };
-       
-        var equalOperator = function() {
-            var input = document.getElementById('input');
-            arr.push(input.value);
-            var result = Number(arr[0]);
-                    for (var i = 1; i < arr.length; i++) {
+            var result = arr[0];
+            for (var i = 1; i < arr.length; i++) {
                         switch (arr[i]) {
                             case '+':
                                 result += Number(arr[i+1]);
@@ -125,11 +124,15 @@
                             case '/':
                                 result /= Number(arr[i+1]);
                                 break;
+                            case '=':
+                                break;
                             default:
                                 break;
                         };
                     };
-                    document.getElementById('input').value = result;
+            input.value = result;
+            arr.push(operator);
+            valid = false;
         };
         
     </script>
