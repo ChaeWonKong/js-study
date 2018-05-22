@@ -109,7 +109,7 @@
         var getOperator = function(operator) {
             var input = document.getElementById('input');
             arr.push(input.value);
-            var result = arr[0];
+            var result = Number(arr[0]);
             for (var i = 1; i < arr.length; i++) {
                         switch (arr[i]) {
                             case '+':
