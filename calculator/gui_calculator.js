@@ -37,14 +37,10 @@ var calculate = {
                         case '/':
                             result /= Number(arr[i+1]);
                             break;
-                        case '=':
-                            break;
-                        default:
-                            break;
                     };
                 };
         input.value = result;
         arr.push(opr);
         this.valid = false;
     }
-}
+};
