@@ -4,138 +4,30 @@
     <meta charset="UTF-8">
     <title>GUI Calculator</title>
     
-    <style>
-        .main {
-            margin: 200px auto;
-            padding: 5px;
-            width: 214px;
-            border: 1px solid;
-            border-radius: 12px;
-            background-color: #000;
-        }
-        
-        button {
-            margin = 0;
-            padding: 0;
-            height: 50px;
-            border: 0px;
-            border-radius: 25px;
-            font-size: 20px;
-            background-color: #404040;
-            color: #fff;
-        }
-        
-        button:hover {
-            opacity: 0.8;
-        }
-
-        button.opr {
-            width: 50px;
-            background-color: #E5822B;
-        }
-        
-        button.num {
-            width: 50px;
-        }
-        
-        button.ac {
-            background-color: #909090;
-            color: black;
-            width: 158px;
-        }
-        
-        input {
-            height: 80px;
-            font-size: 32px;
-            width: 200px;
-            background-color: #000;
-            border: 0px;
-            color: #fff;
-            text-align: right;
-            
-        }
-        
-        @media(orientation: portrait) {
-            input {
-                width: 180px;
-            }
-        }
-    </style>
-    
+    <link rel="stylesheet" href="gui_calculator.css">   
 </head>
 <body>
    <div class="main">
        <input id="input" value="0"><br>
-       <button class="ac" onclick="setDefault()" >AC</button>
-       <button class="opr" onclick="getOperator('/')" style="margin-left: 1px">/</button><br>
-       <button class="num" onclick="setValue(7)" value="7" >7</button>
-       <button class="num" onclick="setValue(8)">8</button>
-       <button class="num" onclick="setValue(9)">9</button>
-       <button class="opr" onclick="getOperator('*')">*</button><br>
-       <button class="num" onclick="setValue(4)">4</button>
-       <button class="num" onclick="setValue(5)">5</button>
-       <button class="num" onclick="setValue(6)">6</button>
-       <button class="opr" onclick="getOperator('-')">-</button><br>
-       <button class="num" onclick="setValue(1)">1</button>
-       <button class="num" onclick="setValue(2)">2</button>
-       <button class="num" onclick="setValue(3)">3</button>
-       <button class="opr" onclick="getOperator('+')">+</button><br>
-       <button class="num" onclick="setValue(0)" style="width: 158px">0</button>
-       <button class="opr" onclick="getOperator('=')" style="margin-left: 1px">=</button>
+       <button class="ac" onclick="calculate.setDefault()" >AC</button>
+       <button class="opr" onclick="calculate.getOperator('/')" style="margin-left: 1px">/</button><br>
+       <button class="num" onclick="calculate.setValue(7)" value="7" >7</button>
+       <button class="num" onclick="calculate.setValue(8)">8</button>
+       <button class="num" onclick="calculate.setValue(9)">9</button>
+       <button class="opr" onclick="calculate.getOperator('*')">*</button><br>
+       <button class="num" onclick="calculate.setValue(4)">4</button>
+       <button class="num" onclick="calculate.setValue(5)">5</button>
+       <button class="num" onclick="calculate.setValue(6)">6</button>
+       <button class="opr" onclick="calculate.getOperator('-')">-</button><br>
+       <button class="num" onclick="calculate.setValue(1)">1</button>
+       <button class="num" onclick="calculate.setValue(2)">2</button>
+       <button class="num" onclick="calculate.setValue(3)">3</button>
+       <button class="opr" onclick="calculate.getOperator('+')">+</button><br>
+       <button class="num" onclick="calculate.setValue(0)" style="width: 158px">0</button>
+       <button class="opr" onclick="calculate.getOperator('=')" style="margin-left: 1px">=</button>
    
    </div>
-   <script>
-        var arr = [];
-        var valid = true;
-        var setValue = function(val) {
-            var input = document.getElementById('input')
-            if (input.value === "0") {
-                input.value = val;
-            } else {
-                if (valid === false) {
-                    input.value = val;
-                    valid = true;
-                } else {
-                    input.value += val;
-                };
-            };
-        };
-        
-        var setDefault = function() {
-            arr = [];
-            document.getElementById('input').value = "0";
-        };
-        
-        var getOperator = function(operator) {
-            var input = document.getElementById('input');
-            arr.push(input.value);
-            var result = arr[0];
-            for (var i = 1; i < arr.length; i++) {
-                        switch (arr[i]) {
-                            case '+':
-                                result += Number(arr[i+1]);
-                                break;
-                            case '-':
-                                result -= Number(arr[i+1]);
-                                break;
-                            case '*':
-                                result *= Number(arr[i+1]);
-                                break;
-                            case '/':
-                                result /= Number(arr[i+1]);
-                                break;
-                            case '=':
-                                break;
-                            default:
-                                break;
-                        };
-                    };
-            input.value = result;
-            arr.push(operator);
-            valid = false;
-        };
-        
-    </script>
+   <script src="gui_calculator.js"></script>
     
 </body>
 </html>
