@@ -19,9 +19,11 @@ button {
     color: #fff;
 }
 
+/*
 button:hover {
     opacity: 0.8;
 }
+*/
 
 button.opr {
     width: 50px;
@@ -52,5 +54,11 @@ input {
 @media(orientation: portrait) {
     input {
         width: 180px;
+    }
+}
+
+@media(orientation: landscape) {
+    button:hover {
+        opacity: 0.8;
     }
 }
