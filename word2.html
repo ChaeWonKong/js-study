@@ -4,88 +4,7 @@
     <meta charset="UTF-8">
     <title>Word Puzzle</title>
     
-    <style>
-        body {
-            font-size: 16px;
-        }
-        
-        .container {
-            margin: 0 auto;
-            max-width: 1000px;
-        }
-        h1 {
-            text-align: center;
-        }
-        
-        table {
-            margin: 50px auto;
-            border: 1px solid black;
-            font-size: 28px;
-            text-align:center;
-        }
-        
-        input {
-            width: 28px;
-            height: 28px;
-            font-size: 20px;
-            text-align: center;
-        }
-        
-        td {
-            width: 30px;
-            height: 30px;
-        }
-        
-        tr.num {
-            font-size: 20px;
-        }
-        
-        td.num {
-            font-size: 20px;
-        }
-        
-        td.blank {
-            background-color: black;
-            opacity: 0.2;
-        }
-        
-        .btn {
-            display: flex;
-            justify-content: center;
-        }
-        
-        button {
-            margin-top: 20px;
-            margin-left: 3px;
-            margin-right: 3px;
-            font-size: 20px;
-            border-radius: 5px;
-        }
-        
-        button:hover {
-            background-color: rgba(0, 0, 0, 0.1);
-        }
-        
-        h2.ans {
-            color: blue;
-        }
-        
-        .info {
-            display: flex;
-            justify-content: space-between;
-        }
-        .row {
-            padding: 5px;
-        }
-        
-        .column {
-            padding: 5px;
-        }
-        
-        p {
-            line-height: 1.8;
-        }
-    </style>
+    <link rel="stylesheet" href="word.css">
 </head>
 <body>
    <div class="container">
@@ -184,43 +103,7 @@
             </p>
         </div>
     </section>
-    <script>
-        var crossWord = {
-            "inputs": [],
-            "count": 0,
-            "valid": true,
-            "submitResults": function() {
-                if (this.valid === false) {
-                    this.refresh();
-                };
-                this.inputs = document.getElementsByTagName('input');
-                for (let i = 0; i < this.inputs.length; i++ ) {
-                    this.checkResults(this.inputs[i]);
-                };
-                document.getElementById('result').innerHTML = '<h2 class="ans">' + "Correct: " + this.count; + "</h2>";
-                this.valid = false;
-            },
-            "checkResults": function(item) {
-                item.value = item.value.toUpperCase();
-                if (item.value === item.id) {
-                    item.setAttribute('style', 'color: blue');
-                    this.count += 1;
-                } else {
-                    item.setAttribute('style', 'color: red');
-                    item.value = item.id;
-                }
-            },
-            "refresh": function() {
-                this.count = 0;
-                document.getElementById('result').innerHTML = '';
-                for (let i = 0; i < this.inputs.length; i++) {
-                    this.inputs[i].setAttribute('style', 'color: black')
-                    this.inputs[i].value = '';
-                };
-                this.valid = true;
-            }
-        };
-    </script>
+    <script src="word.js"></script>
     </div>
     
 </body>
