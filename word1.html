@@ -87,7 +87,12 @@
             </p>
         </div>
     </section>
-    <script src="word.js"></script>
+    <script src="word.js">
+        if (crossWord.count >= 4) {
+            let link = document.getElementById('result');
+            link.innerHTML = '<button type="submit" href="word2.html">Next Level</button>'
+        };
+    </script>
     </div>
     
 </body>
