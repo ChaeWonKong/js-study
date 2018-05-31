@@ -10,7 +10,15 @@ var crossWord = {
                 for (let i = 0; i < this.inputs.length; i++ ) {
                     this.checkResults(this.inputs[i]);
                 };
-                document.getElementById('result').innerHTML = '<h2 class="ans">' + "Correct: " + this.count; + "</h2>";
+                if (this.nextLevel() === true) {
+                    document.getElementById('result').innerHTML = '<h2 class="ans">' + "Correct: " + this.count + "</h2>" + '<h1>Well Done!</h1>' +
+                    '<br><a href="word2.html"><button type="submit">Next Level</button></a>'
+                } else {
+                    document.getElementById('result').innerHTML = '<h2 class="ans">' + "Correct: " + this.count + "</h2>";
+                    if (this.nextLevel() === 'complete') {
+                        document.getElementById('result').innerHTML += '<h1>Well Done!<br>You have completed</h1>'
+                    };
+                };
                 this.valid = false;
             },
             "checkResults": function(item) {
@@ -21,7 +29,7 @@ var crossWord = {
                 } else {
                     item.setAttribute('style', 'color: red');
                     item.value = item.id;
-                }
+                };
             },
             "refresh": function() {
                 this.count = 0;
@@ -31,5 +39,23 @@ var crossWord = {
                     this.inputs[i].value = '';
                 };
                 this.valid = true;
+            },
+            "nextLevel": function() {
+                if (document.getElementsByTagName('title')[0].id ==='w1') {
+                    if (this.count >= 4) {
+                        return true;
+                    } else {
+                        return false;
+                    };
+                } else {
+                    if (this.count >= 4) {
+                        return 'complete';
+                    } else {
+                        return false;
+                    };
+                    };
             }
         };
+            
+
+
