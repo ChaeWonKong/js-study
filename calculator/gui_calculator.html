@@ -27,7 +27,115 @@
        <button class="opr" onclick="calculate.getOperator('=')" style="margin-left: 1px">=</button>
    
    </div>
+<<<<<<< HEAD
    <script src="gui_calculator.js"></script>
+||||||| merged common ancestors
+   <script>
+        var arr = [];
+        var valid = true;
+        var setValue = function(val) {
+            var input = document.getElementById('input')
+            if (input.value === "0") {
+                input.value = val;
+            } else {
+                if (valid === false) {
+                    input.value = val;
+                    valid = true;
+                } else {
+                    input.value += val;
+                };
+            };
+        };
+        
+        var setDefault = function() {
+            arr = [];
+            document.getElementById('input').value = "0";
+        };
+        
+        var getOperator = function(operator) {
+            var input = document.getElementById('input');
+            arr.push(input.value);
+            var result = arr[0];
+            for (var i = 1; i < arr.length; i++) {
+                        switch (arr[i]) {
+                            case '+':
+                                result += Number(arr[i+1]);
+                                break;
+                            case '-':
+                                result -= Number(arr[i+1]);
+                                break;
+                            case '*':
+                                result *= Number(arr[i+1]);
+                                break;
+                            case '/':
+                                result /= Number(arr[i+1]);
+                                break;
+                            case '=':
+                                break;
+                            default:
+                                break;
+                        };
+                    };
+            input.value = result;
+            arr.push(operator);
+            valid = false;
+        };
+        
+    </script>
+=======
+   <script>
+        var arr = [];
+        var valid = true;
+        var setValue = function(val) {
+            var input = document.getElementById('input')
+            if (input.value === "0") {
+                input.value = val;
+            } else {
+                if (valid === false) {
+                    input.value = val;
+                    valid = true;
+                } else {
+                    input.value += val;
+                };
+            };
+        };
+        
+        var setDefault = function() {
+            arr = [];
+            document.getElementById('input').value = "0";
+        };
+        
+        var getOperator = function(operator) {
+            var input = document.getElementById('input');
+            arr.push(input.value);
+            var result = Number(arr[0]);
+            for (var i = 1; i < arr.length; i++) {
+                        switch (arr[i]) {
+                            case '+':
+                                result += Number(arr[i+1]);
+                                break;
+                            case '-':
+                                result -= Number(arr[i+1]);
+                                break;
+                            case '*':
+                                result *= Number(arr[i+1]);
+                                break;
+                            case '/':
+                                result /= Number(arr[i+1]);
+                                break;
+                            case '=':
+                                break;
+                            default:
+                                break;
+                        };
+                    };
+            input.value = result;
+            arr.push(operator);
+            valid = false;
+        };
+        
+    </script>
+>>>>>>> a7e3447e5b6e0eff15741e9a8a9854413668ca8a
     
 </body>
 </html>
