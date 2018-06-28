@@ -1,0 +1,41 @@
+/* ToDo CSS */
+
+.main_bx {
+    border: 2px solid #004040;
+    border-radius: 5px;
+    width: 500px;
+}
+
+h2 {
+    text-align: center;
+    font-family: sans-serif;
+    color: aqua;
+}
+
+.check_bx {
+    text-align: center;
+}
+
+.input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+.txt {
+    margin-left: 10px;
+    width: 350px;
+    height: 20px;
+}
+
+.btn {
+    margin-bottom: 20px;
+}
+
+.btn button {
+    padding: 8px;
+    font-size: 14px;
+    background-color: #004040;
+    color: aqua;
+    border-radius: 3px;
+}
