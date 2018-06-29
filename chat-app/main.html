@@ -16,9 +16,12 @@
        </div>
        
        <div class="post">
-           <div class="user">Leon</div>
+           <div class="user">
+              <script>
+               main.getUser();
+               </script></div>
            <input class="comment" type="text" id="cmt"></input>
-           <button class="submit" type="submit" onclick="send()">Send</button>
+           <button class="submit" type="submit" onclick="main.send()">Send</button>
        </div>
    </div>
     
