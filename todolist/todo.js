@@ -10,9 +10,9 @@ function addList() {
 function submit() {
     const txtInputs = document.getElementsByClassName('txt');
     let box = document.getElementById('input');
-    let result = ""
+    let result = "";
     for (let i=0; i < txtInputs.length; i++) {
-        result += '<input type="checkbox"><span>' + txtInputs[i].value + '</span></input><br><br>'
+        result += '<div class="result"><input type="checkbox" class="chk"><span>' + txtInputs[i].value + '</span></input></div>'
     };
     box.innerHTML = result;
 }

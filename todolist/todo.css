@@ -21,7 +21,9 @@ h2 {
     margin-bottom: 10px;
 }
 
-
+.chk {
+    margin-right: 10px;
+}
 .txt {
     margin-left: 10px;
     width: 350px;
@@ -38,4 +40,10 @@ h2 {
     background-color: #004040;
     color: aqua;
     border-radius: 3px;
+}
+
+.result {
+    margin-top: 10px;
+    text-align: left;
+    margin-left: 150px;
 }
