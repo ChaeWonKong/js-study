@@ -1,0 +1,57 @@
+/* WebChat CSS */
+
+.container {
+    width: 500px;
+    border: 1px solid grey;
+    border-radius: 10px;
+}
+
+.head {
+    padding: 20px;
+    text-align: center;
+    color: cornflowerblue
+}
+
+.con {
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    border: 1px dotted grey;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.user {
+    flex: 1;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: red;
+}
+
+.txt {
+    flex: 6;
+}
+
+.post {
+    padding-left: 15px;
+    margin-bottom: 20px;
+}
+
+.comment {
+    width: 400px;
+}
+
+.submit {
+    margin-right: 15px;
+    font-size: 14px;
+    background-color: #fff;
+    border: 1px solid grey;
+    border-radius: 2px;
+    float: right;
+}
+
+.submit:hover {
+    background-color: grey;
+}
