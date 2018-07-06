@@ -5,7 +5,17 @@
 	<title>Object Model</title>
 </head>
 <body>
-	<img src="https://s3-ap-northeast-1.amazonaws.com/opentutorialsfile/course/94.png">
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
 	
+	<script>
+		var lis = document.getElementsByTagName('li');
+		for (let i = 0; i < 3; i++) {
+			lis[i].style.color = 'red';
+		}
+	</script>	
 </body>
 </html>
