@@ -10,6 +10,18 @@
 	<title>jQuery</title>
 </head>
 <body>
-	
+	<ul>
+		<li class="active">첫번째</li>
+		<li>두번째</li>
+		<li id="active">세번째</li>
+		<p>$('li').css('color', 'red');</p>
+		<button type="submit" onclick="$('li').css('color', 'blue')">execute</button>
+		<button type="submit" onclick="$('li').css('color', 'black')">redo</button>
+		<button type="submit" onclick="$('.active').css('color', 'red')">active</button>
+		<button type="submit" onclick="$('#active').css('font-size', '48px')">id</button>
+	</ul>
+	<script>
+		$('li').css('font-size', '18px').css('font-weight', 'bold').css('text-decoration', 'underline');
+	</script>
 </body>
 </html>
