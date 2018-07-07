@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HTML Elements</title>
+</head>
+<body>
+	<ul>
+		<li>첫번째</li>
+		<li id="sec">두번째</li>
+		<li>세번째</li>
+
+		<a href="#" id="anchor">여기를 클릭</a>
+	</ul>
+	<script>
+		let tag = document.getElementsByTagName('li');
+		console.group('li');
+		for (let i=0; i<tag.length; i++) {
+			console.log(tag[i]);
+		}
+		console.groupEnd();
+		let id = document.getElementById('sec');
+		console.log(id.constructor.name);
+		id.style = "color: aqua";
+		let anchor = document.getElementById('anchor');
+		id.type = 'square';
+	</script>
+	
+</body>
+</html>
