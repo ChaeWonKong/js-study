@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+
+	<title>jQuery Element</title>
+
+</head>
+<body>
+	<ul>
+		<li>HTML</li>
+		<li>CSS</li>
+		<li>Javascript</li>
+	</ul>
+
+	<script>
+		let li = $('li');
+		li.map(function(index, el) {
+			console.log(index, el);
+			$(el).css('color', 'red');
+		})
+	</script>
+	
+</body>
+</html>
