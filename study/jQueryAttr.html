@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Attr</title>
+</head>
+<body>
+	<a id="target" href="http://leonkong.com">LeonKong</a>
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+
+	<script>
+		var t = $('#target');
+		console.log(t.attr('href'));
+		t.attr('title', 'Blog');
+		t.removeAttr('title');
+	</script>
+</body>
+</html>
